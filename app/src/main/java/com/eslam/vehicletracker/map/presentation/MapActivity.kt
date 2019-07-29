@@ -34,11 +34,11 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_map)
-        val mapFragment : SupportMapFragment? =
-            supportFragmentManager.findFragmentById(R.id.map) as? SupportMapFragment
+
+        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as? SupportMapFragment
         mapFragment?.getMapAsync(this)
 
-        intent?.extras?.getParcelable<VehicleUIModel>(VEHICLE_KEY).let { viewModel.vehicle.value = null }
+        intent?.extras?.getParcelable<VehicleUIModel>(VEHICLE_KEY).let { viewModel.vehicle.value = it }
     }
 
     private fun enableUserLocation() {
