@@ -3,7 +3,7 @@ package com.eslam.vehicletracker.overview.di
 import androidx.arch.core.util.Function
 import com.eslam.vehicletracker.overview.domain.IVehicleOverviewRepository
 import com.eslam.vehicletracker.overview.domain.VehicleOverviewInteractor
-import com.eslam.vehicletracker.overview.domain.VehicleRefiner
+import com.eslam.vehicletracker.overview.repository.VehicleRefiner
 import com.eslam.vehicletracker.overview.model.VehicleApiModel
 import com.eslam.vehicletracker.overview.model.VehicleMapper
 import com.eslam.vehicletracker.overview.model.VehicleUIModel

@@ -2,7 +2,6 @@ package com.eslam.vehicletracker.overview.domain
 
 import com.eslam.vehicletracker.overview.model.VehicleApiModel
 import com.eslam.vehicletracker.overview.presentation.IVehicleOverviewInteractor
-import com.eslam.vehicletracker.overview.repository.VehicleOverviewRepository
 import io.reactivex.Observable
 import javax.inject.Inject
 
@@ -13,7 +12,7 @@ import javax.inject.Inject
  */
 class VehicleOverviewInteractor @Inject constructor() : IVehicleOverviewInteractor {
     @Inject
-    lateinit var vehicleOverviewRepository: VehicleOverviewRepository
+    lateinit var vehicleOverviewRepository: IVehicleOverviewRepository
 
     /**
      * retrieves an Observable of vehicles from the Repository and sort it

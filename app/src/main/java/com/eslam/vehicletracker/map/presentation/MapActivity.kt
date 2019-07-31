@@ -73,7 +73,7 @@ class MapActivity : AppCompatActivity(), OnMapReadyCallback {
         with(googleMap) {
             val latLng = LatLng(vehicle.lat, vehicle.lng)
             moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, ZOOM_LEVEL))
-            addMarker(MarkerOptions().position(latLng).title("${vehicle.name} - ${vehicle.model}"))
+            addMarker(MarkerOptions().position(latLng).title("${vehicle.name} - ${vehicle.licencePlate}"))
         }
     }
 

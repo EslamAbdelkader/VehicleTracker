@@ -1,4 +1,4 @@
-package com.eslam.vehicletracker.overview.domain
+package com.eslam.vehicletracker.overview.repository
 
 import androidx.arch.core.util.Function
 import com.eslam.vehicletracker.overview.model.TimedPosition
@@ -6,7 +6,9 @@ import com.eslam.vehicletracker.overview.model.VehicleApiModel
 import javax.inject.Inject
 
 /**
- * A helper class responsible for eliminating any null possibilities from backend
+ * A helper class responsible for eliminating any null possibilities from backend.
+ * Should be used by the repository to handle any nulls before storing locally (Not implemented),
+ * or passing to the interactor
  */
 open class VehicleRefiner @Inject constructor() : Function<VehicleApiModel, VehicleApiModel> {
 
@@ -24,6 +26,7 @@ open class VehicleRefiner @Inject constructor() : Function<VehicleApiModel, Vehi
             nickname = nickname ?: "",
             brand = apiModel.brand ?: "",
             model = apiModel.model ?: "",
+            licensePlate = apiModel.licensePlate ?: "",
             lastPosition = TimedPosition(timeStamp, lat, lng)
         )
     }

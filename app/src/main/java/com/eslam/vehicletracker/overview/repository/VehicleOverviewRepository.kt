@@ -1,7 +1,6 @@
 package com.eslam.vehicletracker.overview.repository
 
 import com.eslam.vehicletracker.overview.domain.IVehicleOverviewRepository
-import com.eslam.vehicletracker.overview.domain.VehicleRefiner
 import com.eslam.vehicletracker.overview.model.VehicleApiModel
 import com.eslam.vehicletracker.overview.network.VehiclesApi
 import io.reactivex.Observable

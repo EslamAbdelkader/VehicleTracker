@@ -8,6 +8,7 @@ import android.os.Parcelable
  */
 data class VehicleUIModel(
     val id: String,
+    val licencePlate: String,
     val name: String,
     val brand: String,
     val model: String,
@@ -19,12 +20,14 @@ data class VehicleUIModel(
         parcel.readString()?: "",
         parcel.readString()?: "",
         parcel.readString()?: "",
+        parcel.readString()?: "",
         parcel.readDouble(),
         parcel.readDouble()
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(id)
+        parcel.writeString(licencePlate)
         parcel.writeString(name)
         parcel.writeString(brand)
         parcel.writeString(model)

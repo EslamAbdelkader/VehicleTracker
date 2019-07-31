@@ -25,7 +25,7 @@ import javax.inject.Inject
 class VehicleOverviewViewModel : ViewModel() {
 
     @Inject
-    lateinit var overviewInteractor: IVehicleOverviewInteractor
+    lateinit var interactor: IVehicleOverviewInteractor
     @Inject
     lateinit var mapper: Function<VehicleApiModel, VehicleUIModel>
     @Inject
@@ -41,10 +41,10 @@ class VehicleOverviewViewModel : ViewModel() {
 
 
     /**
-     * Retrieves the data from the overviewInteractor, and sets the data and state in the LiveData holders
+     * Retrieves the data from the interactor, and sets the data and state in the LiveData holders
      */
     fun loadData() {
-        val disposable = overviewInteractor.loadData()
+        val disposable = interactor.loadData()
             .doOnSubscribe { state.value = State.LOADING }
             .map { mapper.apply(it) }
             .toList()

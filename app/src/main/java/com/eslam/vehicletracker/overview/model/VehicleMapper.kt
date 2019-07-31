@@ -19,6 +19,7 @@ open class VehicleMapper @Inject constructor() : Function<VehicleApiModel, Vehic
          */
         return VehicleUIModel(
             id = apiModel.id!!,
+            licencePlate = apiModel.licensePlate!!,
             name = apiModel.nickname!!,
             brand = apiModel.brand!!,
             model = apiModel.model!!,
