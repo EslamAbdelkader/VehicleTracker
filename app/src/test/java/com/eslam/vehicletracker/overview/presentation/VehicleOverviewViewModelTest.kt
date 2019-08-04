@@ -26,13 +26,18 @@ import java.net.UnknownHostException
 private const val GENERAL_ERROR_MESSAGE = "general error message"
 private const val NETWORK_ERROR_MESSAGE = "network error message"
 
+/**
+ * Unit tests for [VehicleOverviewViewModel]
+ */
 class VehicleOverviewViewModelTest{
+
     /**
      * For LiveData Instant Execution
      */
     @get:Rule
     var rule = InstantTaskExecutorRule()
 
+    // Initialization of view model and its dependencies
     private val mapper: Function<VehicleApiModel, VehicleUIModel> by lazy { Mockito.mock(VehicleMapper::class.java) }
     private val interactor: IVehicleOverviewInteractor by lazy { Mockito.mock(IVehicleOverviewInteractor::class.java) }
     private val stringProvider: IStringProvider by lazy { Mockito.mock(IStringProvider::class.java) }

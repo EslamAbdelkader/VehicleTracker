@@ -15,9 +15,15 @@ import javax.inject.Inject
  */
 class VehicleOverviewRepository @Inject constructor() : IVehicleOverviewRepository {
 
+    /**
+     * The API responsible for fetching overview information about vehicles
+     */
     @Inject
     lateinit var vehiclesApi: VehiclesApi
 
+    /**
+     * A refiner used to handle any null fields before storing or processing data
+     */
     @Inject
     lateinit var vehicleRefiner: VehicleRefiner
 

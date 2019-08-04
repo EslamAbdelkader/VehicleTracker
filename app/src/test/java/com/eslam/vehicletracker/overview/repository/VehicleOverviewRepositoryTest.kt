@@ -24,11 +24,14 @@ private val VEHICLE_API_RESPONSE = List(3) { VehicleApiModel() }
  */
 class VehicleOverviewRepositoryTest {
 
+    /**
+     * This rule overrides RxJava scheduling, to be able to run sequentially in unit tests
+     */
     @get:Rule
     val schedulerRule = RxSchedulerRule()
 
+    // Initialization of repository and its dependencies
     private val repo: VehicleOverviewRepository by lazy { VehicleOverviewRepository() }
-
     private lateinit var refiner: VehicleRefiner
 
     /**

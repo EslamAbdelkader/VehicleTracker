@@ -6,6 +6,9 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
+/**
+ * Base url for all end points
+ */
 private const val BASE_URL = "https://gist.githubusercontent.com/pstued/13117a4f7c625ee9d96cbd876a6f1c9e/raw/7409b184955d05348e4718926a6599e5621b12c1/"
 
 /**
@@ -20,12 +23,18 @@ val retrofit: Retrofit by lazy {
         .build()
 }
 
+/**
+ * Basic retrofit logging interceptor
+ */
 private val loggingInterceptor by lazy {
     HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BASIC
     }
 }
 
+/**
+ * [OkHttpClient] associated with the retrofit instance
+ */
 private val okHttpClient: OkHttpClient by lazy {
     OkHttpClient.Builder().addInterceptor(loggingInterceptor).build()
 }

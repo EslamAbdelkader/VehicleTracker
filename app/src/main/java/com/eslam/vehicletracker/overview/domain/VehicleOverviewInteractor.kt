@@ -20,7 +20,7 @@ class VehicleOverviewInteractor @Inject constructor() : IVehicleOverviewInteract
     override fun loadData(): Observable<VehicleApiModel> {
         return vehicleOverviewRepository
             .getAllVehicles()
-            .sorted { vehicle, other -> vehicle.nickname!!.compareTo(other.nickname!!) }
+            .sorted { vehicle, other -> vehicle.nickname?.compareTo(other.nickname?: "")?: -1 }
     }
 }
 

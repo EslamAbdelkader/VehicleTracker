@@ -13,11 +13,20 @@ private val VEHICLE_A = VehicleApiModel(nickname = "A")
 private val VEHICLE_B = VehicleApiModel(nickname = "B")
 private val VEHICLE_C = VehicleApiModel(nickname = "C")
 
+/**
+ * Unit tests for [VehicleOverviewInteractor]
+ */
 class VehicleOverviewInteractorTest {
 
+    /**
+     * This rule overrides any RxJava scheduling, to be able to run sequentially in unit tests
+     */
     @get:Rule
     val schedulerRule = RxSchedulerRule()
 
+    /**
+     * The interactor under test
+     */
     private val interactor: VehicleOverviewInteractor by lazy { VehicleOverviewInteractor() }
 
     /**

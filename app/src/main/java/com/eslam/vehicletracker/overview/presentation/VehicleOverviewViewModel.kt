@@ -24,14 +24,34 @@ import javax.inject.Inject
  */
 class VehicleOverviewViewModel : ViewModel() {
 
+    /**
+     * The interactor used to provide the data to the view model
+     * after doing any business logic on it (sorting in this case)
+     */
     @Inject
     lateinit var interactor: IVehicleOverviewInteractor
+
+    /**
+     * The mapper used to convert the domain layer's data [VehicleApiModel]
+     * to presentation layer's data [VehicleUIModel]
+     */
     @Inject
     lateinit var mapper: Function<VehicleApiModel, VehicleUIModel>
+
+    /**
+     * String provider used to extract data from the resources
+     */
     @Inject
     lateinit var stringProvider: IStringProvider
 
+    /**
+     * Data state at any moment (Loading, Success, Error)
+     */
     private val state by lazy { MutableLiveData<State>() }
+
+    /**
+     * Used to keep track of disposables and clear them when no longer needed
+     */
     private val compositeDisposable by lazy { CompositeDisposable() }
 
     /**

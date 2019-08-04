@@ -11,7 +11,14 @@ private const val NAME = "name"
 private const val LAT = 0.0
 private const val LNG = 0.0
 
+/**
+ * Unit tests for [VehicleMapper]
+ */
 class VehicleMapperTest{
+
+    /**
+     * The mapper under test
+     */
     private val mapper = VehicleMapper()
 
     /**

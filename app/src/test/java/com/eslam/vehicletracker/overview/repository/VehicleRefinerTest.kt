@@ -4,6 +4,9 @@ import com.eslam.vehicletracker.overview.model.VehicleApiModel
 import junit.framework.Assert.assertNotNull
 import org.junit.Test
 
+/**
+ * Unit tests for [VehicleRefiner]
+ */
 class VehicleRefinerTest{
     private val refiner = VehicleRefiner()
 
